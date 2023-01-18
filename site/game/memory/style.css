@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --background: #505050;
+    --text-color: #fff;
+    --button-color: #fff;
+    --button-bg: #222;
+    --button-bg-hover: #333;
+    --button-bg-open: #eaeaea;
+    --button-bg-matched: #ffd665;
+
+    --button-size: 80px;
+    --button-gap: 10px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background: var(--background);
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+}
+
+.top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.info {
+    color: var(--text-color);
+}
+
+#startbtn {
+    outline: none;
+    border: none;
+    background: var(--button-bg);
+    color: var(--button-color);
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+#startbtn:hover {
+    background: var(--button-bg-hover);
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, var(--button-size));
+    grid-template-rows: repeat(4, var(--button-size));
+    grid-column-gap: var(--button-gap);
+    grid-row-gap: var(--button-gap);
+    user-select: none;
+}
+
+.card {
+    display: grid;
+    place-items: center;
+    background: var(--button-bg);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background .2s ease;
+}
+
+.card:hover {
+    background: var(--button-bg-hover);
+}
+
+.card[data-open=true] {
+    background: var(--button-bg-open);
+    transition: none;
+}
+
+.card[data-matched=true] {
+    background: var(--button-bg-matched);
+    transition: background .5s ease;
+}
+
+.card span {
+    text-align: center;
+    display: none;
+    font-size: 40px;
+}
+
+.card[data-open=true] span {
+    display: block;
+}
+
+/* TODO */
+@keyframes open {
+    from {  }
+    to {  }
+}
+
+@keyframes close {
+    from {  }
+    to {  }
+}
